@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+/* this image have no-repeat. Let's make it center on the x and y axis and cover for the background position. 
+And we want to position this absolute and then let's set the top and left to zero.
+ the width we'll set to 100 viewport widths and the height to 100 viewport height. 
+ So we just wanted to take up the whole viewport and let's add a z-index here of negative one, because we want this to be behind the 0% 
+ add a filter here, initially the blur is going to be set to zero pixels. */
+/* Later when the image start getting blurry there will be more white space seen at the border of the whole page to remove that
+ we will be changing the top, left, width and height values to top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vw + 60px); */
+.bg {
+  background: url("https://images.unsplash.com/photo-1678366954137-773fe11cb761?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
+    no-repeat center center/cover;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  filter: blur(0px);
+}
+/* the loading text(loading start from 0%), we just want to increase the font-size so set the font-size to 50 pixels 
+and let's set the color to white  */
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+}
