@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/*OverflowX will only hide the scroll bar oon the X axix  */
 body {
   font-family: "Lato", sans-serif;
   background-color: #333;
@@ -11,7 +12,10 @@ body {
   overflow-x: hidden;
   margin: 0;
 }
-
+/*This is the overall page which had background has white colour
+transform-origin since we gave top left the page will rotate from the top left position  
+transition will make the rotation smooth
+padding 50px will give space on all side oof the page */
 .container {
   background-color: #fafafa;
   transform-origin: top left;
@@ -20,17 +24,22 @@ body {
   min-height: 100vh;
   padding: 50px;
 }
-
+/* the transform property will rotate the container towards right
+(if we give the value as 20deg then the page will rotate towards left.*/
 .container.show-nav {
   transform: rotate(-20deg);
 }
-
+/* This circle container will be on the tpo left of the page
+since we are giving position as fixed the circle will be stable there fixed position
+*/
 .circle-container {
   position: fixed;
-  top: -105px;
-  left: -105px;
+  top: -100px;
+  left: -100px;
 }
-
+/* this will give orange background for the circle
+since we gave border-radius 50% it will turn into half circle 
+the circle needs to so we are giving transition: tranform  */
 .circle {
   background-color: #ff7979;
   height: 200px;
@@ -39,10 +48,14 @@ body {
   position: relative;
   transition: tranform 0.5s linear;
 }
-
+/* container has show-nav applied to it then we have oour circle styled back to rotate -70 towards left  */
 .container.show-nav .circle {
   transform: rotate(-70deg);
 }
+/* since all the buttoon are on the toop of the circle and we have a half circle we need to bring those buttons to the centre 
+so we are giving top 50% and left 50% which wiill bring the buttons too the centre of the circle 
+background: tranparent will give black color and border for the button 
+since we dont need border we are giving border:0 and button coolor to white*/
 .circle button {
   cursor: pointer;
   position: absolute;
@@ -54,26 +67,31 @@ body {
   font-size: 26px;
   color: #fff;
 }
-
+/* to get rid of the boorder when we foocus on the button we are adding outline: none  */
 .circle button:focus {
   outline: none;
 }
-
+/* circle button with the id(#)of open when we give left value to 60% 
+the position will change towards little left from hamburger menu's positioon */
 .circle button#open {
   left: 60%;
 }
-
+/* circle button with the id(#)of close since it is relative to close we are giviing top 60%
+Since we need to rotate this button we are giving transform: rotate(90deg) and transform-origin: top left
+this will move the 'X' button to the left slight middle of the circle, since we see only half of the circle 
+this button will be visible only when the circle rotates.*/
 .circle button#close {
   top: 60%;
   transform: rotate(90deg);
   transform-origin: top left;
 }
-
+/* When the container div has show-nav and direct nav li will bring back all of them to the original place*/
 .container.show-nav + nav li {
   transform: translateX(0);
   transition-delay: 0.3s;
 }
-
+/* nav is the home, about and contact this position will be fixed position at the left bottom 40px up of the page
+and from the left 0, and Z-index mean?*/
 nav {
   position: fixed;
   bottom: 40px;
@@ -81,11 +99,17 @@ nav {
   z-index: 100;
 }
 
+/* unorderd list of nav liist stylke type is none will get rid of bullet points near navs 
+padding left to 30px ?*/
 nav ul {
   list-style-type: none;
   padding-left: 30px;
 }
 
+/* this means under ul first list, the margin: 40px 0 top and bottom will have space between the nav's
+ We are giving transform: translateX(-100%) because
+ tthis will rotate the navs Home towards the left most(-100) of the page and  transition: transform 0.4s ease-in 
+ will rotate smooth*/
 nav ul li {
   text-transform: uppercase;
   color: #fff;
@@ -93,40 +117,43 @@ nav ul li {
   transform: translateX(-100%);
   transition: transform 0.4s ease-in;
 }
-
+/*This will give some spave between icons of nav and text  */
 nav ul li i {
   font-size: 20px;
   margin-right: 10px;
 }
-
+/* This will give some angle to navs. second li  will stick out after 15px 
+transform: translateX(-150%); this rotate the about nav*/
 nav ul li + li {
   margin-left: 15px;
   transform: translateX(-150%);
 }
-
+/* This will give some angle to navs. third li will stick out after 30px 
+\transform: translateX(-200%); this will rotate the contact nav */
 nav ul li + li + li {
   margin-left: 30px;
   transform: translateX(-200%);
 }
 
+/* This will show the full image within the space in page */
 .content img {
   max-width: 100%;
 }
-
+/* style for content max-width: 1000px with margin: 50px auto: this will helpful when we increase the screen size */
 .content {
   max-width: 1000px;
   margin: 50px auto;
 }
-
+/* the heading of the content will not have any margin since we gave value to 0*/
 .content h1 {
   margin: 0;
 }
-
+/* the small tag that is author: color grey and italic  */
 .content small {
   color: #555;
   font-style: italic;
 }
-
+/* paragraph's color will be black and line height will be 1.5 */
 .container p {
   color: #333;
   line-height: 1.5;

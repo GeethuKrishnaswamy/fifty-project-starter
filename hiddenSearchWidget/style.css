@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+/* search class potioon is relative with height 50px */
+.search {
+  position: relative;
+  height: 50px;
+}
+/*for search that have class input white background space around the text so we gave padding of 15px 
+ height and width of 50px will turn the text box from rectangle to square
+ transition: width 0.3 ease is given as animation to expand the width of text box with ease effect*/
+.search .input {
+  background-color: #fff;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  transition: width 0.3 ease;
+}
+/* button colour white, with zero border, position this absolute within the search class here, search container
+top and left 0 and height and width 50px will bring the search button on tpo of search box.   */
+/* transition: transform 0.3s ease; what we want to do with the button input to expand the width. 
+We have the transition for that up. Here the button we want to push over, so the input gets wider, the button gets pushed over.
+ So we'll use transform on that. So we want to add a transition for transform, same amount of time as the width on the input, and an ease effect. */
+.btn {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+/* this will get rid of the outline*/
+.btn:focus,
+.input:focus {
+  outline: none;
+}
+/* When the search have active class added then the width should extend too 200px from 50px */
+.search.active .input {
+  width: 200px;
+}
+/* when search element has active class on it and button to move over by using transform: translateX(198px) */
+.search.active .btn {
+  transform: translateX(198px);
+}
