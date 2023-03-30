@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/*OverflowX will only hide the scroll bar oon the X axix  */
+/*OverflowX will only hide the scroll bar oon the X axis  */
 body {
   font-family: "Lato", sans-serif;
   background-color: #333;
@@ -72,7 +72,7 @@ since we dont need border we are giving border:0 and button coolor to white*/
   outline: none;
 }
 /* circle button with the id(#)of open when we give left value to 60% 
-the position will change towards little left from hamburger menu's positioon */
+the position will change towards little left from hamburger menu's position */
 .circle button#open {
   left: 60%;
 }
@@ -99,7 +99,7 @@ nav {
   z-index: 100;
 }
 
-/* unorderd list of nav liist stylke type is none will get rid of bullet points near navs 
+/* unorderd list of nav list style type is none will get rid of bullet points near navs 
 padding left to 30px ?*/
 nav ul {
   list-style-type: none;

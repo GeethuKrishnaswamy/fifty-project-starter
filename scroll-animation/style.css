@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+/* background-color foor the screen will be tannish */
+body {
+  background-color: #efedd6;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+h1 {
+  margin: 10px;
+}
+
+/* box background colour is bluecolour and text is white color  display:flex" is used to enable flexbox layout for a container element. 
+When we set the "display" property of an element to "flex", it becomes a flex container, and its child elements become flex items.
+align-items: center property is used to vertically center flex items within a flex container
+justify-content: center property is used to horizontally center flex items within a flex container 
+margin will seperate the booxes border-radius 10px will give slight curve border
+box shadow - two pixels and four pixels for the offsets, five pixels for the blur, rgba for the color which is going to be 0, 0, 0, 0.3 for the alpha value*/
+/* For animation to move it too x-axis we are giviing tranform translateX 200% will take the boxes to right siide of the screen */
+.box {
+  background-color: steelblue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+/* boox class and nth of typr(sudo selector) even boxes and translaote to 200% so all the ven one in one side and odd one in other side */
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+/* to show the box we sset animatioin in y axix  */
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
+}
