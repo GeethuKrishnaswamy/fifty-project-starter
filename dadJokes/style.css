@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #686de0;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+}
+/*container which wraps around everything set background color to white
+border raidus to give a round shape for the box coners we give 10px
+box shadow will give bit of shadow for the rounded corners
+this below code is for the box*/
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+}
+/*Style for Content in the container */
+h3 {
+  margin: 0;
+  opacity: 0.5; /*will give the trasparent look foor the h3*/
+  letter-spacing: 2px; /*this will give space for the heading*/
+}
+/*joke which we fetch froom API */
+.joke {
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+/*Styling for button*/
+.btn {
+  background-color: #9f68e0; /*this color is for button*/
+  color: white; /*this color is for text*/
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 14px 40px; /*will iincrese the button size */
+  font-size: 16px;
+  cursor: pointer;
+}
+/*while clicking we need to shoow an tranform effect for that we have to give btn active*/
+.btn:active {
+  transform: scale(0.98);
+}
+/*while focusing we need to shoow an outline for that we have to give focuss for btn*/
+
+.btn:focus {
+  outline: 0;
+}
